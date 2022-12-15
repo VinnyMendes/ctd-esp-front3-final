@@ -49,10 +49,10 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
         <LayoutCheckout>
             <Container maxWidth="lg">
                 <FormControl noValidate component={"form"} onSubmit={handleSubmit(onSubmit)} >
-                    <Paper sx={{ background: "#f0f0f0", padding: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
+                    <Paper sx={{ background: "#dbe9ff",marginBottom: 2, padding: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
                         <Typography sx={{ flexBasis: "100%" }}>Dados pessoais: </Typography>
                         <Box>
-                            <TextField {...register("customer.name")} label="Nome" type="text" error={!!errors.customer?.name} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.name")} label="Nome" type="text" error={!!errors.customer?.name} required />
                             {!!errors.customer?.name && (
                                 <Typography
                                     color="red"
@@ -65,7 +65,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                                 </Typography>)}
                         </Box>
                         <Box>
-                            <TextField {...register("customer.lastname")} label="Sobrenome" type="text" error={!!errors.customer?.lastname} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.lastname")} label="Sobrenome" type="text" error={!!errors.customer?.lastname} required />
                             {!!errors.customer?.lastname && <Typography
                                 color="red"
                                 gutterBottom
@@ -77,7 +77,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("customer.email")} label="E-mail" type="email" error={!!errors.customer?.email} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.email")} label="E-mail" type="email" error={!!errors.customer?.email} required />
                             {!!errors.customer?.email && <Typography
                                 color="red"
                                 gutterBottom
@@ -89,10 +89,10 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                     </Paper>
-                    <Paper sx={{ background: "#f0f0f0", padding: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
+                    <Paper sx={{ background: "#dbe9ff", padding: 2,marginBottom: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
                         <Typography sx={{ flexBasis: "100%" }}>Endereço: </Typography>
                         <Box>
-                            <TextField {...register("customer.address.address1")} label="Endereço" type="text" error={!!errors.customer?.address?.address1} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.address.address1")} label="Endereço" type="text" error={!!errors.customer?.address?.address1} required />
                             {!!errors.customer?.address?.address1 && <Typography
                                 color="red"
                                 gutterBottom
@@ -104,10 +104,10 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("customer.address.address2")} label="Apartamento, andar, etc" type="text" error={!!errors.customer?.address?.address2} />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.address.address2")} label="Apartamento, andar, etc" type="text" error={!!errors.customer?.address?.address2} />
                         </Box>
                         <Box>
-                            <TextField {...register("customer.address.city")} label="Cidade" type="text" error={!!errors.customer?.address?.city} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.address.city")} label="Cidade" type="text" error={!!errors.customer?.address?.city} required />
                             {!!errors.customer?.address?.city && <Typography
                                 color="red"
                                 gutterBottom
@@ -119,7 +119,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("customer.address.state")} label="Estado" type="text" error={!!errors.customer?.address?.state} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.address.state")} label="Estado" type="text" error={!!errors.customer?.address?.state} required />
                             {!!errors.customer?.address?.state && <Typography
                                 color="red"
                                 gutterBottom
@@ -131,7 +131,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("customer.address.zipCode")} label="CEP" type="text" error={!!errors.customer?.address?.zipCode} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("customer.address.zipCode")} label="CEP" type="text" error={!!errors.customer?.address?.zipCode} required />
                             {!!errors.customer?.address?.zipCode && <Typography
                                 color="red"
                                 gutterBottom
@@ -143,10 +143,10 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                     </Paper>
-                    <Paper sx={{ background: "#f0f0f0", padding: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
+                    <Paper sx={{ background: "#dbe9ff", padding: 2,marginBottom: 2, rowGap: 2, display: "flex", flexWrap: "wrap" }} elevation={3}>
                         <Typography sx={{ flexBasis: "100%" }}>Dados de pagamento: </Typography>
                         <Box>
-                            <TextField {...register("card.number")} label="Nº do cartão" inputProps={{ maxLength: 19 }} type="tel" inputMode="numeric" error={!!errors.card?.number} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("card.number")} label="Nº do cartão" inputProps={{ maxLength: 19 }} type="tel" inputMode="numeric" error={!!errors.card?.number} required />
                             {!!errors.card?.number && <Typography
                                 color="red"
                                 gutterBottom
@@ -158,7 +158,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("card.nameOnCard")} label="Nome no cartão" type="text" error={!!errors.card?.nameOnCard} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("card.nameOnCard")} label="Nome no cartão" type="text" error={!!errors.card?.nameOnCard} required />
                             {!!errors.card?.nameOnCard && <Typography
                                 color="red"
                                 gutterBottom
@@ -170,7 +170,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("card.expDate")} label="Validade" type="text" error={!!errors.card?.expDate} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("card.expDate")} label="Validade" type="text" error={!!errors.card?.expDate} required />
                             {!!errors.card?.expDate && <Typography
                                 color="red"
                                 gutterBottom
@@ -182,7 +182,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
                             </Typography>}
                         </Box>
                         <Box>
-                            <TextField {...register("card.cvc")} inputProps={{ maxLength: 3, "data-testid":"cvc" }} label="CVC" type="password" error={!!errors.card?.cvc} required />
+                            <TextField sx={{ background: "#fff", marginRight: 2}} {...register("card.cvc")} inputProps={{ maxLength: 3, "data-testid":"cvc" }} label="CVC" type="password" error={!!errors.card?.cvc} required />
                             {!!errors.card?.cvc && <Typography
                                 color="red"
                                 gutterBottom
@@ -199,7 +199,7 @@ const Checkout: NextPage<ICheckoutPageProps> = ({ comic }: ICheckoutPageProps) =
             </Container>
 
             <Container maxWidth="sm">
-                <Paper sx={{ background: "#f0f0f0", padding: 2, display: "flex", flexDirection: "column", rowGap: 2 }} elevation={3}>
+                <Paper sx={{ background: "#dbe9ff", padding: 2, display: "flex", flexDirection: "column", rowGap: 2 }} elevation={3}>
                     <CardMedia
                         component="img"
                         src={getImgSrcFromThumbnail(comic.thumbnail)}

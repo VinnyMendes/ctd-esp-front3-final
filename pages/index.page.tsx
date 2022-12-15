@@ -1,4 +1,5 @@
 import { Grid, Pagination, Stack } from "@mui/material";
+import { Box } from "@mui/system";
 import Card from "dh-marvel/components/card/card";
 import BodySingle from "dh-marvel/components/layouts/body/single/body-single";
 import { getComics } from "dh-marvel/services/marvel/marvel.service";
@@ -25,9 +26,9 @@ const Index = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await getComics((pagina - 1) * 12, 12).then(res => {
+      const data = await getComics((pagina - 1) * 54, 54).then(res => {
         try{
-          setTotal(Number((res.data.total / 12).toFixed()));
+          setTotal(Number((res.data.total / 54).toFixed()));
         }catch(e){console.log(e)}
         
         return res.data.results.map(({ title, id, thumbnail }: IComic) => {
@@ -51,21 +52,26 @@ const Index = () => {
       </Head>
 
       <BodySingle title={"Heróis!"}>
-      <Stack spacing={2}>
-        <Pagination count={total} page={pagina} onChange={handleChange} variant="outlined" color="primary" />
-      </Stack>
-        <Grid container justifyContent="center" spacing={2}>
-          {comics &&
-            comics.map((comic) => (
-              <Grid item key={comic.id}>
-                <Card
-                  id={comic.id}
-                  titulo={comic.title}
-                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-                />
-              </Grid>
-            ))}
-        </Grid>
+      <Box sx={{ margin: 'auto' }}>
+        <Stack spacing={2}>
+          <Pagination count={total} page={pagina} onChange={handleChange} variant="outlined" color="primary" />
+        </Stack>
+      </Box>
+        <Box mt={10}>
+          <Grid container justifyContent="center" spacing={2}>
+            {comics &&
+              comics.map((comic) => (
+                <Grid item key={comic.id}>
+                  <Card
+                    
+                    id={comic.id}
+                    titulo={comic.title}
+                    src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  />
+                </Grid>
+              ))}
+          </Grid>
+        </Box>
       </BodySingle>
     </>
   );
