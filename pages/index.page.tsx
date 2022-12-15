@@ -7,8 +7,8 @@ import { ChangeEvent, useEffect, useState } from "react";
 
 interface IComic {
   id: number;
-  titulo: string;
-  thumb: {
+  title: string;
+  thumbnail: {
     path: string;
     extension: string;
   }
@@ -30,8 +30,8 @@ const Index = () => {
           setTotal(Number((res.data.total / 12).toFixed()));
         }catch(e){console.log(e)}
         
-        return res.data.results.map(({ titulo, id, thumb }: IComic) => {
-          return { titulo, id, thumb };
+        return res.data.results.map(({ title, id, thumbnail }: IComic) => {
+          return { title, id, thumbnail };
       })
     })
       setComics(data)
@@ -60,8 +60,8 @@ const Index = () => {
               <Grid item key={comic.id}>
                 <Card
                   id={comic.id}
-                  titulo={comic.titulo}
-                  src={`${comic.thumb.path}.${comic.thumb.extension}`}
+                  titulo={comic.title}
+                  src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
                 />
               </Grid>
             ))}
