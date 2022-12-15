@@ -22,10 +22,10 @@ const CardWrapper = ({ src, titulo, id }: card) => {
   const open = Boolean(anchorEl);
 
   return (
-    <Card sx={{ width: "345px" }}>
+    <Card sx={{ width: "400px", backgroundColor: "#ff2929" }}>
       <CardMedia
         component="img"
-        height="200px"
+        height="300px"
         image={src}
         alt={`front cover comic ${titulo}`}
       />
@@ -39,6 +39,7 @@ const CardWrapper = ({ src, titulo, id }: card) => {
           noWrap
           variant="h5"
           component="div"
+          sx={{color:'white'}}
         >
           {titulo}
         </Typography>
@@ -61,11 +62,11 @@ const CardWrapper = ({ src, titulo, id }: card) => {
         </Popover>
       </CardContent>
       <CardActions>
-        <Button size="medium" variant="contained">
+        <Button sx={{ background: '#65b5fc', color: "white" }} size="medium" variant="contained">
           Comprar
         </Button>
         <Link href={`/comics/${id}`}>
-          <Button size="medium" variant="outlined">
+          <Button sx={{ background: '#e7fbff', color: "black" }} size="medium" variant="contained">
             Ver detalhes
           </Button>
         </Link>
